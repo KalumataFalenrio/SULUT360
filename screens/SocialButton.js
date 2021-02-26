@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import {windowHeight, windowWidth} from '../utils/Dimensions';
-// import { useFonts, Roboto_700Bold} from '@expo-google-fonts/roboto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 
@@ -32,10 +31,10 @@ export default SocialButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    marginTop: 40,
-    width: '70%',
+    marginTop: 30,
+    width: '75%',
     height: windowHeight / 17,
-    left : 60,
+    left : 50,
     padding: 15,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -57,6 +56,5 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    // fontFamily: 'Roboto_700Bold',
   },
 });

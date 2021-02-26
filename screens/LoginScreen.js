@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { SafeAreaView ,View, Text, StyleSheet, Button, Image } from 'react-native';
+// import * as Animatable from 'react-native-animatable';
+// import LinearGradient from 'react-native-linear-gradient';
 import firebase from 'firebase';
 import SocialButton from '../screens/SocialButton';
 
@@ -100,49 +102,90 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SafeAreaView>
-                <View styles={styles.headerWrapper}>
-                    <Image
-                     source={require('../assets/images/beach.png')}
-                     style={styles.loginImage}/>
-                </View>
-            </SafeAreaView>
-            <View style={styles.titlesWrapper}>
-                    <Text style={{fontWeight: "bold",fontSize : 24 }}>SIGN IN</Text>
-                </View>
-              
-        <SocialButton
+        <View style={styles.header}>
+          <Text style={styles.text_header}>WELCOME TO SULUT360 APP</Text>
+        </View>
+        <View style={styles.footer}>
+          <View style={styles.titlesWrapper}>
+              <Text style={{fontWeight: "bold",fontSize : 28 }}>SIGN IN</Text>
+          </View>
+          <SocialButton
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
-            color="#4867aa"
-            backgroundColor="#e6eaf4"
+            color="#FFFFFF"
+            backgroundColor="#3488D6"
             // onPress={() => fbLogin()}
           />
 
         <SocialButton
             buttonTitle="Sign In with Google"
             btnType="google"
-            color="#de4d41"
-            backgroundColor="#f5e7ea"
+            color="#FFFFFF"
+            backgroundColor="#FF6838"
           onPress={() => this.signInWithGoogleAsync()}
-        />
+        /> 
+          </View>
       </View>
+      // <View style={styles.container}>
+      //   <SafeAreaView>
+      //           <View styles={styles.headerWrapper}>
+      //               <Image
+      //                source={require('../assets/images/beach.png')}
+      //                style={styles.loginImage}/>
+      //           </View>
+      //       </SafeAreaView>
+      //       <View style={styles.titlesWrapper}>
+      //               <Text style={{fontWeight: "bold",fontSize : 24 }}>SIGN IN</Text>
+      //           </View>
+              
     );
   }
 }
 export default LoginScreen;
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, 
+    backgroundColor: '#000000'
   },
-  loginImage: {
-    width : 415,
-    height: 250,
-    paddingTop: 20,
+  header: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      paddingHorizontal: 20,
+      paddingBottom: 50
   },
-  titlesWrapper:{
-    marginTop : 70,
-    paddingHorizontal : 150,
+  footer: {
+      flex: 4,
+      backgroundColor: '#F5F3F3',
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      paddingHorizontal: 20,
+      paddingVertical: 30
+  },
+  text_header: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 30
+  },
+  // text_footer: {
+  //     color: '#05375a',
+  //     fontSize: 18
+  // },
+    titlesWrapper:{
+    marginTop : 40,
+    paddingHorizontal : 130,
 },
 });
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//   },
+//   loginImage: {
+//     width : 415,
+//     height: 250,
+//     paddingTop: 20,
+//   },
+//   titlesWrapper:{
+//     marginTop : 60,
+//     paddingHorizontal : 150,
+// },
+// });
