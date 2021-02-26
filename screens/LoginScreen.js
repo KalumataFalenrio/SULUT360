@@ -103,7 +103,7 @@ class LoginScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.text_header}>WELCOME TO SULUT360 APP</Text>
+          <Text style={styles.text_header}>SULUT360</Text>
         </View>
         <View style={styles.footer}>
           <View style={styles.titlesWrapper}>
