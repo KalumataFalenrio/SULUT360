@@ -83,7 +83,7 @@ class LoginScreen extends Component {
   signInWithGoogleAsync = async () => {
     try {
       const result = await Expo.Google.logInAsync({
-        androidClientId: '',//YOUR_CLIENT_ID_HERE',
+        androidClientId: '326875822669-g0r2rglq3hg91vqjn0o14g9am367h4cj.apps.googleusercontent.com',//YOUR_CLIENT_ID_HERE',
         behavior: 'web',
         // iosClientId: '', //enter ios client id
         scopes: ['profile', 'email']
