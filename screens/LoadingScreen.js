@@ -23,7 +23,7 @@ class LoadingScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" color="#00ff00" />
       </View>
     );
   }

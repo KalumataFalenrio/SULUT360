@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "394136211070",
+    "project_id": "sulut360-8f970",
+    "storage_bucket": "sulut360-8f970.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394136211070:android:d268a261f8d326ee8ad22f",
+        "android_client_info": {
+          "package_name": "com.SULUT360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394136211070-7np6a5flpahetkb74gvjgh8qfid3tjto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.SULUT360",
+            "certificate_hash": "28bf00e99387142f348d6d5563111ead326b23d0"
+          }
+        },
+        {
+          "client_id": "394136211070-5po802aa96obsuio7nr1b2co3k905d7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnaQMCHZvBza8Eisf4IoKlPziQyB4_bZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394136211070-5po802aa96obsuio7nr1b2co3k905d7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

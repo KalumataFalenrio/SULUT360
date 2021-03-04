@@ -103,6 +103,7 @@ class LoginScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
+        <Text style={styles.text_header}>WELCOME TO</Text>
           <Text style={styles.text_header}>SULUT360</Text>
         </View>
         <View style={styles.footer}>
@@ -151,13 +152,13 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'flex-end',
       paddingHorizontal: 20,
-      paddingBottom: 50
+      paddingBottom: 20
   },
   footer: {
       flex: 4,
       backgroundColor: '#F5F3F3',
-      borderTopLeftRadius: 30,
-      borderTopRightRadius: 30,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
       paddingHorizontal: 20,
       paddingVertical: 30
   },
