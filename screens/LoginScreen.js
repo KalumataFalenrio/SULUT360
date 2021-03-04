@@ -110,13 +110,13 @@ class LoginScreen extends Component {
           <View style={styles.titlesWrapper}>
               <Text style={{fontWeight: "bold",fontSize : 28 }}>SIGN IN</Text>
           </View>
-          <SocialButton
+          {/* <SocialButton
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
             color="#FFFFFF"
             backgroundColor="#3488D6"
             // onPress={() => fbLogin()}
-          />
+          /> */}
 
         <SocialButton
             buttonTitle="Sign In with Google"

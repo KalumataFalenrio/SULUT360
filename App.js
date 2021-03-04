@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+// import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 // import Header from './Component/Header';
+import * as GoogleSignIn from 'expo-google-sign-in';
 
 //NAVIGATION
 import 'react-native-gesture-handler';
