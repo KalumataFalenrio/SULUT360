@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView ,View, Text, StyleSheet, Button, Image } from 'react-native';
+import { SafeAreaView ,View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
 // import * as Animatable from 'react-native-animatable';
 // import LinearGradient from 'react-native-linear-gradient';
 import firebase from 'firebase';
@@ -110,13 +110,13 @@ class LoginScreen extends Component {
           <View style={styles.titlesWrapper}>
               <Text style={{fontWeight: "bold",fontSize : 28 }}>SIGN IN</Text>
           </View>
-          {/* <SocialButton
+          <SocialButton
             buttonTitle="Sign In with Facebook"
             btnType="facebook"
             color="#FFFFFF"
             backgroundColor="#3488D6"
             // onPress={() => fbLogin()}
-          /> */}
+          />
 
         <SocialButton
             buttonTitle="Sign In with Google"
@@ -125,6 +125,10 @@ class LoginScreen extends Component {
             backgroundColor="#FF6838"
           onPress={() => this.signInWithGoogleAsync()}
         /> 
+
+        <TouchableOpacity>
+          <Text style={{top:30, left:170, fontWeight: 'bold', fontSize: 18}}>skip</Text>
+        </TouchableOpacity>
           </View>
       </View>
       // <View style={styles.container}>
@@ -146,17 +150,20 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#000000'
+    backgroundColor: '#F5F3F3'
   },
   header: {
-      flex: 1,
+      flex: 2,
       justifyContent: 'flex-end',
       paddingHorizontal: 20,
-      paddingBottom: 20
+      paddingBottom: 20,
+      backgroundColor: '#FF6200',
   },
   footer: {
-      flex: 4,
+      flex: 1,
+      top: -20,
       backgroundColor: '#F5F3F3',
+      width: 412,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
       paddingHorizontal: 20,
@@ -167,26 +174,10 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 30
   },
-  // text_footer: {
-  //     color: '#05375a',
-  //     fontSize: 18
-  // },
     titlesWrapper:{
-    marginTop : 40,
+    marginTop : 5,
     paddingHorizontal : 130,
 },
+
 });
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-//   loginImage: {
-//     width : 415,
-//     height: 250,
-//     paddingTop: 20,
-//   },
-//   titlesWrapper:{
-//     marginTop : 60,
-//     paddingHorizontal : 150,
-// },
-// });
+
