@@ -128,7 +128,7 @@ const LoginScreen = ({navigation}) =>{
             btnType="google"
             color="#FFFFFF"
             backgroundColor="#FF6838"
-          onPress={() => this.signInWithGoogleAsync()}
+          // onPress={() => this.signInWithGoogleAsync()}
         /> 
 
         <TouchableOpacity onPress={goToabout}>
