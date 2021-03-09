@@ -8,8 +8,8 @@ import SocialButton from '../screens/SocialButton';
 
 const LoginScreen = ({navigation}) =>{
   // class AboutScreen extends Component {
-      const goToabout = () =>{
-        navigation.navigate('about');
+      const goTomainmenu = () =>{
+        navigation.navigate('mainmenu');
       }
 // class LoginScreen extends Component {
   // isUserEqual = (googleUser, firebaseUser) => {
@@ -131,7 +131,7 @@ const LoginScreen = ({navigation}) =>{
           // onPress={() => this.signInWithGoogleAsync()}
         /> 
 
-        <TouchableOpacity onPress={goToabout}>
+        <TouchableOpacity onPress={goTomainmenu}>
           <Text style={{top:30, left:170, fontWeight: 'bold', fontSize: 18}}>skip</Text>
         </TouchableOpacity>
           </View>

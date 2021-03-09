@@ -12,6 +12,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 //IMPORT SEMUA SCREEN
 import login from './screens/LoginScreen';
 import loading from './screens/LoadingScreen';
+import mainmenu from './screens/MainMenu';
+import tempatwisata from './screens/TempatWisata';
 import information from './screens/informationScreen';
 import about from './screens/AboutScreen';
 import feedbacks from './screens/feedbacksScreen';
@@ -34,6 +36,8 @@ export default function App(){
           <Stack.Screen name="login" component={login}/>
           <Stack.Screen name="loading" component={loading}/>
           <Stack.Screen name="about" component={about}/>
+          <Stack.Screen name="mainmenu" component={mainmenu}/>
+          <Stack.Screen name="tempatwisata" component={tempatwisata}/>
           <Stack.Screen name="information" component={information}/>
           <Stack.Screen name="feedbacks" component={feedbacks}/>
         </Stack.Navigator>

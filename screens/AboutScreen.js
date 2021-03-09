@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   loginImage: {
     height:height*0.5,
-    width:430,
+    width:420,
   },
   aboutbtn: {
     position: 'absolute',
