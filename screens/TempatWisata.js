@@ -2,17 +2,23 @@ import React, { Component } from "react";
 import { 
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity,
 } from "react-native";
 
-class TempatWisata extends Component {
-    render() {
+const TempatWisata = ({navigation}) =>{
+
+    const goToTempatWisata = () =>{
+      navigation.navigate('about');
+    }
         return (
             <View style={styles.container}>
-                <Text>TempatWisata</Text>
+                <TouchableOpacity onPress={goToTempatWisata}>
+          <Text style={{top:30, fontWeight: 'bold', fontSize: 18}}>skip</Text>
+        </TouchableOpacity>
             </View>
         );
-    }
+
 }
 export default TempatWisata;
 

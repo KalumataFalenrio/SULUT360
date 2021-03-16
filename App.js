@@ -18,6 +18,9 @@ import information from './screens/informationScreen';
 import about from './screens/AboutScreen';
 import feedbacks from './screens/feedbacksScreen';
 
+//LOGIN
+// import facebook from './Component/loginWithFacebook';
+
 //FIREBAS
 // import * as firebase from 'firebase';
 // import { firebaseConfig } from './config';
@@ -34,6 +37,7 @@ export default function App(){
           headerShown:false
         }}>
           <Stack.Screen name="login" component={login}/>
+          {/* <Stack.Screen name="facebook" component={facebook}/> */}
           <Stack.Screen name="loading" component={loading}/>
           <Stack.Screen name="about" component={about}/>
           <Stack.Screen name="mainmenu" component={mainmenu}/>
