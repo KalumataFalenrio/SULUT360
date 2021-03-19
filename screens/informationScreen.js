@@ -20,6 +20,9 @@ const informationScreen = ({navigation}) =>{
         const goTofeedbacks = () =>{
           navigation.navigate('feedbacks');
         }
+        const goToMainMenu = () =>{
+          navigation.navigate('MainMenu');
+        }
         return (
             <View style={styles.container}>
                 <Image
@@ -72,7 +75,8 @@ const informationScreen = ({navigation}) =>{
 
         </ScrollView>
 
-            <TouchableOpacity style={{position: 'absolute', left:20, top:40,
+            <TouchableOpacity onPress={goToMainMenu}
+            style={{position: 'absolute', left:20, top:40,
           backgroundColor:'#ff6200', padding:10, borderRadius:40,}}>
         <Feather name="arrow-left" size={24} color='#fff'/>
         </TouchableOpacity>

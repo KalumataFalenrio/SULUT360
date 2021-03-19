@@ -4,7 +4,7 @@ import { View, Text, StyleSheet,
   ScrollView, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
-// import firebase from 'firebase';
+
 
 const height = Dimensions.get('window').height;
 
@@ -15,6 +15,9 @@ const AboutScreen = ({navigation}) =>{
     }
     const goTofeedbacks = () =>{
       navigation.navigate('feedbacks');
+    }
+    const goToMainMenu = () =>{
+      navigation.navigate('MainMenu');
     }
     return (
       <View style={styles.container}>
@@ -42,7 +45,8 @@ const AboutScreen = ({navigation}) =>{
           </Text>
         </ScrollView>
 
-        <TouchableOpacity style={{position: 'absolute', left:20, top:40,
+        <TouchableOpacity onPress={goToMainMenu}
+        style={{position: 'absolute', left:20, top:40,
           backgroundColor:'#ff6200', padding:10, borderRadius:40,}}>
         <Feather name="arrow-left" size={24} color='#fff'/>
         </TouchableOpacity>

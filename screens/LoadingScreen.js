@@ -12,7 +12,7 @@ class LoadingScreen extends Component {
       function(user) {
         console.log('AUTH STATE CHANGED CALLED ')
         if (user) {
-          this.props.navigation.navigate('DashboardScreen');
+          this.props.navigation.navigate('MainMenu');
         } else {
           this.props.navigation.navigate('LoginScreen');
         }
@@ -23,7 +23,7 @@ class LoadingScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ActivityIndicator size="large" color="#00ff00" />
+        <ActivityIndicator size="large" color="#ff6200" />
       </View>
     );
   }

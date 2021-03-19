@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import { View, Text, StyleSheet, 
     Button, Image, ImageBackground, 
     ScrollView, TouchableOpacity, FlatList, Dimensions, TextInput } from 'react-native';
-
 import { Entypo, Feather } from '@expo/vector-icons';
 
 const height = Dimensions.get('window').height;
@@ -11,12 +10,16 @@ const MainMenu = ({navigation}) =>{
     const goTotempatwisata = () =>{
         navigation.navigate('tempatwisata');
       }
+      const goTomenu = () =>{
+        navigation.navigate('menu');
+      }
         return (
             <View style={styles.container}>
                 <ImageBackground
             source={require('../assets/images/Kawanua360spot1.png')}
             style={styles.loginImage}>
-                    <TouchableOpacity style={{position: 'absolute', left:20, top:40,
+                    <TouchableOpacity onPress={goTomenu}
+                    style={{position: 'absolute', left:20, top:40,
                         backgroundColor:'#ff6200', padding:10, borderRadius:40, elevation: 5,}}>
                     <Entypo name="menu" size={25} color='#fff'/>
                     </TouchableOpacity>

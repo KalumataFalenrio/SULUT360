@@ -1,54 +1,54 @@
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator} from 'react-navigation';
 // import Header from './Component/Header';
-import * as GoogleSignIn from 'expo-google-sign-in';
-
-//NAVIGATION
-import 'react-native-gesture-handler';
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-//IMPORT SEMUA SCREEN
-import login from './screens/LoginScreen';
-import loading from './screens/LoadingScreen';
-import mainmenu from './screens/MainMenu';
-import tempatwisata from './screens/TempatWisata';
-import information from './screens/informationScreen';
-import about from './screens/AboutScreen';
-import feedbacks from './screens/feedbacksScreen';
-
-//LOGIN
-// import facebook from './Component/loginWithFacebook';
+// import * as GoogleSignIn from 'expo-google-sign-in';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 
 //FIREBAS
-// import * as firebase from 'firebase';
-// import { firebaseConfig } from './config';
-// firebase.initializeApp(firebaseConfig);
+import * as firebase from 'firebase';
+import { firebaseConfig } from './config';
 
-const Stack = createStackNavigator();
-
-export default function App(){
-  return (
-      <NavigationContainer>
-        <Stack.Navigator
-        initialRoute="login"
-        screenOptions={{
-          headerShown:false
-        }}>
-          <Stack.Screen name="login" component={login}/>
-          {/* <Stack.Screen name="facebook" component={facebook}/> */}
-          <Stack.Screen name="loading" component={loading}/>
-          <Stack.Screen name="about" component={about}/>
-          <Stack.Screen name="mainmenu" component={mainmenu}/>
-          <Stack.Screen name="tempatwisata" component={tempatwisata}/>
-          <Stack.Screen name="information" component={information}/>
-          <Stack.Screen name="feedbacks" component={feedbacks}/>
-        </Stack.Navigator>
-      </NavigationContainer>
-  )
+if(!firebase.apps.length){
+  firebase.initializeApp(firebaseConfig);
 }
 
+//IMPORT SEMUA SCREEN
+import LoginScreen from './screens/LoginScreen';
+import MainMenu from './screens/MainMenu';
+import LoadingScreen from './screens/LoadingScreen';
+import TempatWisata from './screens/TempatWisata';
+import informationScreen from './screens/informationScreen';
+import AboutScreen from './screens/AboutScreen';
+import feedbacksScreen from './screens/feedbacksScreen';
+import menu from './screens/menu';
+
+
+export default class App extends React.Component{
+  render(){
+    return <AppNavigator/>;
+  }
+}
+
+// const myApp = createDrawerNavigator({
+//   Home:{
+//    screen:menu
+//   },
+// })
+
+const AppSwitchNavigator = createSwitchNavigator({
+  LoadingScreen:LoadingScreen,
+  LoginScreen:LoginScreen,
+  MainMenu:MainMenu,
+  tempatwisata:TempatWisata,
+  information:informationScreen,
+  about:AboutScreen,
+  feedbacks:feedbacksScreen,
+
+});
+
+const AppNavigator = createAppContainer(AppSwitchNavigator);
 
 const styles = StyleSheet.create({
   container: {
@@ -58,3 +58,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+

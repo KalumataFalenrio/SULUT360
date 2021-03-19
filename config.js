@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyArFtsuPPNOUNpGXmTCJlVQy1WBD7lb0tM",
-  authDomain: "sulut360-d18ed.firebaseapp.com",
-  projectId: "sulut360-d18ed",
-  storageBucket: "sulut360-d18ed.appspot.com",
-  messagingSenderId: "326875822669",
-  appId: "1:326875822669:web:2e102a7646818856e8ba04",
-  measurementId: "G-MT7ER129VX"
+  apiKey: "AIzaSyB9EcTrFtywaP17MaoHNzUP0Ep0WWQyOzc",
+  authDomain: "sulut-8af84.firebaseapp.com",
+  projectId: "sulut-8af84",
+  storageBucket: "sulut-8af84.appspot.com",
+  messagingSenderId: "241992910621",
+  appId: "1:241992910621:web:b6e1b10f6d9f8889ca43f4",
+  measurementId: "G-9S70ZVNL70"
 };
