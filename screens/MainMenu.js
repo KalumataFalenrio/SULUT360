@@ -1,18 +1,23 @@
 import React, { Component, useState } from "react";
 import { View, Text, StyleSheet, 
     Button, Image, ImageBackground, 
-    ScrollView, TouchableOpacity, FlatList, Dimensions, TextInput } from 'react-native';
+    ScrollView, TouchableOpacity, FlatList, Dimensions, TextInput, ActivityIndicator } from 'react-native';
 import { Entypo, Feather } from '@expo/vector-icons';
 
 const height = Dimensions.get('window').height;
 
 const MainMenu = ({navigation}) =>{
+    
     const goTotempatwisata = () =>{
         navigation.navigate('tempatwisata');
       }
       const goTomenu = () =>{
         navigation.navigate('menu');
       }
+      const goTotampilandarat = () =>{
+          navigation.navigate('tampilandarat')
+      }
+    
         return (
             <View style={styles.container}>
                 <ImageBackground
@@ -24,21 +29,19 @@ const MainMenu = ({navigation}) =>{
                     <Entypo name="menu" size={25} color='#fff'/>
                     </TouchableOpacity>
                 <View> 
-                    <TextInput
-                    style={styles.searchbox}
-                    placeholder='search your destination'
-                    placeholderTextColor='#585757'>
-                    </TextInput>
-                    <Feather name='search' size={25} color='#585757'  style={
-                        {position:'absolute', top:270, left:380, elevation:5,}
-                    }/>
+                    {/* {this.state.search}
+                    <View style={{...StyleSheet.absoluteFill,
+                    alignItems:'center',justifyContent:'center'}}>
+                        <ActivityIndicator size="large" color="#ff6200"/>
+                    </View> */}
                 </View>
                 </ImageBackground>
                 
                 <ScrollView style={styles.description}>
                    <View>
                        
-                        <TouchableOpacity style={styles.tampilandarat}>
+                        <TouchableOpacity onPress={goTotampilandarat}
+                        style={styles.tampilandarat}>
                             <Image
                                 source={require('../assets/images/tampilanDarat.png')}
                                 style={{top:-60, left:-55,resizeMode:'center'}}
@@ -93,18 +96,6 @@ const styles = StyleSheet.create({
     loginImage: {
         height:height*0.4,
         width:420,
-    },
-    searchbox: {
-        top:240,
-        left : 80,
-        marginTop: 16,
-        backgroundColor:'#FFFFFF',
-        paddingLeft: 24,
-        padding : 12,
-        borderTopLeftRadius : 30,
-        borderBottomLeftRadius : 30,
-        width: '80%',
-        elevation: 5,
     },
     description:{
         flex:1,

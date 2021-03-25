@@ -30,10 +30,15 @@ const LoginScreen = () =>{
 
       signUpFacebook = async () => {
         try {
-          await Facebook.initializeAsync("133973795314616");
-          const { type, token } = await Facebook.logInWithReadPermissionsAsync({
-            permissions: ["public_profile"],
-          });
+          await Facebook.initializeAsync({
+            appId: '133973795314616',
+          })
+          const {
+            type,
+            token,
+          } = await Facebook.logInWithReadPermissionsAsync({
+            permissions: ['public_profile'],
+          })
           if (type === "success") {
             const credential = firebase.auth.FacebookAuthProvider.credential(token)
             firebase.auth().signInWithCredential(credential)
@@ -54,8 +59,7 @@ const LoginScreen = () =>{
           alert(`Facebook Login Error: ${message}`);
         }
       };
-
-
+      
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -78,7 +82,7 @@ const LoginScreen = () =>{
             btnType="facebook"
             color="#FFFFFF"
             backgroundColor="#3488D6"
-            onPress={signUpFacebook}
+            onPress={() =>this.signUpFacebook()}
           />}
 
         <SocialButton

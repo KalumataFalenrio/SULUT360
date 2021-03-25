@@ -22,7 +22,8 @@ import TempatWisata from './screens/TempatWisata';
 import informationScreen from './screens/informationScreen';
 import AboutScreen from './screens/AboutScreen';
 import feedbacksScreen from './screens/feedbacksScreen';
-import menu from './screens/menu';
+import TampilanDarat from './screens/TampilanDarat';
+
 
 
 export default class App extends React.Component{
@@ -45,6 +46,7 @@ const AppSwitchNavigator = createSwitchNavigator({
   information:informationScreen,
   about:AboutScreen,
   feedbacks:feedbacksScreen,
+  tampilandarat:TampilanDarat,
 
 });
 
