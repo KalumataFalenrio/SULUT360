@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
 import { FlatList, ActivityIndicator, Text, View,StyleSheet,
-    Dimensions, TouchableOpacity, TextInput} from 'react-native';
+    Dimensions, TouchableOpacity, TextInput, Image, Linking} from 'react-native';
+import { WebView } from 'react-native-webview';
 import { Feather } from '@expo/vector-icons';
-import { Value } from 'react-native-reanimated';
+
+import Button from '../screens/Button';
 
 const {width,height} = Dimensions.get('window')
 
@@ -63,16 +65,26 @@ class DaratAPI extends Component {
         <FlatList 
           data={this.state.dataSource}
           renderItem={({ item }) => (
-              <TouchableOpacity>
+              
             <View style={styles.cardView}>
                 <Text style={styles.sitename}>{item.site_name}</Text>
-                <Text style={styles.thumbnail}>{item.thumbnail}</Text>
-                <Text style={styles.link_360}>{item.link_360}</Text>
+              <TouchableOpacity>
+                <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
+              </TouchableOpacity>
+        
+              <Button
+            buttonTitle="View 360"
+            btnType="360"
+            color="#FFFFFF"
+            backgroundColor="#ff6200"
+            onPress={()=>Linking.openURL(item.link_360)}
+          />
             </View>
-            </TouchableOpacity>
           )}
           keyExtractor={({ id }) => id}
         />
+        
+        
         <TouchableOpacity onPress={()=>this.props.navigation.navigate('MainMenu')}
         style={{position: 'absolute', left:20, top:40,
           backgroundColor:'#ff6200', padding:10, borderRadius:40, elevation:5}}>
@@ -111,18 +123,21 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight:'bold'
     },
-    thumbnail:{
-        height: height / 9,
-        marginLeft: width * 0.04,
-        marginRight: width * 0.04,
-        marginVertical: height * 0.03
+    image:{
+      top:-50,
+      height: 190,
+      marginLeft:20,
+      marginRight:20,
+      // marginLeft: width * 0.05,
+      // marginRight: width * 0.05,
+      // marginVertical: height * 0.02
     },
     link_360:{
-        top: -20,
+        top: 20,
         marginBottom: width * 0.0,
         marginHorizontal: width * 0.02,
         fontSize: 15,
-        color: 'black'
+        color: 'blue'
     },
 });
 export default DaratAPI;

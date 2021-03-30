@@ -23,6 +23,9 @@ import informationScreen from './screens/informationScreen';
 import AboutScreen from './screens/AboutScreen';
 import feedbacksScreen from './screens/feedbacksScreen';
 import TampilanDarat from './screens/TampilanDarat';
+import TampilanUdara from './screens/TampilanUdara'
+import OlahragaDive from './screens/OlahragaDive';
+import Budaya from './screens/Budaya';
 
 
 
@@ -47,7 +50,9 @@ const AppSwitchNavigator = createSwitchNavigator({
   about:AboutScreen,
   feedbacks:feedbacksScreen,
   tampilandarat:TampilanDarat,
-
+  tampilanudara:TampilanUdara,
+  olahragadive:OlahragaDive,
+  budaya:Budaya,
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

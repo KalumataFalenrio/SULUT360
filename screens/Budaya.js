@@ -35,15 +35,14 @@ class TampilanDarat extends Component {
 
   render() {
     const cekCategory =(item)=>{
-      if(item.category == "Rekreasi"){
+      if(item.category == "Budaya"){
         return(
           
               <View style={styles.cardView}>
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
                   <Text style={styles.sitename}>{item.site_name}</Text>
-                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('about')}>
                   <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
-                 
+                  </TouchableOpacity>
 
               <Button
                   buttonTitle="View 360"

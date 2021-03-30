@@ -18,7 +18,7 @@ const SocialButton = ({
       style={[styles.buttonContainer, {backgroundColor: bgColor}]}
       {...rest}>
       <View style={styles.iconWrapper}>
-        <FontAwesome name={btnType} style={styles.icon} size={22} color={color} />
+        <FontAwesome name={btnType} style={styles.icon} size={22} color={color} /> 
       </View>
       <View style={styles.btnTxtWrapper}>
         <Text style={[styles.buttonText, {color: color}]}>{buttonTitle}</Text>

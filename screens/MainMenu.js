@@ -17,6 +17,15 @@ const MainMenu = ({navigation}) =>{
       const goTotampilandarat = () =>{
           navigation.navigate('tampilandarat')
       }
+      const goTotampilanudara = () =>{
+          navigation.navigate('tampilanudara')
+      }
+      const goToolahragadive = () =>{
+          navigation.navigate('olahragadive')
+      }
+      const goTobudaya = () =>{
+        navigation.navigate('budaya')
+    }
     
         return (
             <View style={styles.container}>
@@ -49,7 +58,8 @@ const MainMenu = ({navigation}) =>{
                             <Text style={{top:-140, paddingLeft:15, fontWeight:'bold', color:'#1D9885'}}>tampilan darat</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.tampilanudara}>
+                        <TouchableOpacity onPress={goTotampilanudara}
+                        style={styles.tampilanudara}>
                             <Image
                                 source={require('../assets/images/tampilanUdara.png')}
                                 style={{top:-60, left:-55,resizeMode:'center'}}
@@ -57,7 +67,8 @@ const MainMenu = ({navigation}) =>{
                              <Text style={{top:-140, paddingLeft:15, fontWeight:'bold', color:'#7C0A94'}}>tampilan udara</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.Dive}>
+                        <TouchableOpacity onPress={goToolahragadive}
+                        style={styles.Dive}>
                             <Image
                                 source={require('../assets/images/Dive.png')}
                                 style={{top:-60, left:-55,resizeMode:'center'}}
@@ -65,7 +76,8 @@ const MainMenu = ({navigation}) =>{
                              <Text style={{top:-140, paddingLeft:12, fontWeight:'bold', color:'#1D9885'}}>Olahraga & dive </Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.Budaya}>
+                        <TouchableOpacity onPress={goTobudaya}
+                        style={styles.Budaya}>
                             <Image
                                 source={require('../assets/images/Budaya.png')}
                                 style={{top:-60, left:-55,resizeMode:'center'}}

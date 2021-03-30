@@ -6,9 +6,9 @@ import {
     Image,
     TouchableOpacity,
     Dimensions,
-    ScrollView,
+    ScrollView, Share
 } from "react-native";
-import { Feather, Entypo, FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const height = Dimensions.get('window').height;
 
@@ -23,6 +23,27 @@ const informationScreen = ({navigation}) =>{
         const goToMainMenu = () =>{
           navigation.navigate('MainMenu');
         }
+        const onShare = async () => {
+          try {
+            const result = await Share.share({
+              message: 'share',
+              // url : navigation.getParam('link_360'),
+     
+            });
+            if (result.action === Share.sharedAction) {
+              if (result.activityType) {
+                // shared with activity type of result.activityType
+              } else {
+                // shared
+              }
+            } else if (result.action === Share.dismissedAction) {
+              // dismissed
+            }
+          } catch (error) {
+            alert(error.message);
+          }
+        };
+        
         return (
             <View style={styles.container}>
                 <Image
@@ -32,23 +53,22 @@ const informationScreen = ({navigation}) =>{
         <ScrollView style={styles.description}>
           <TouchableOpacity style={{position:'relative', left:10, paddingTop:60, flexDirection:'row', }}>
             <Entypo name="location" size={25} color='#ff6200'/>
-            <Text style={{textAlign:'left', left:5, top:-4}}>Bahu Mall, Jl. R.W.Monginsidi no.1, 95115, 
-                  Manado, Indonesia</Text>
+            <Text style={{textAlign:'left', left:5, top:-4}}>{navigation.getParam('address')}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={{position:'relative', left:10, paddingTop:10, flexDirection:'row'}}>
             <Entypo name="phone" size={25} color='#ff6200'/>
-            <Text style={{textAlign:'left', left:5}}>+62 431 7282 888</Text>
+            <Text style={{textAlign:'left', left:5}}>{navigation.getParam('contact_person_phone')}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{position:'relative', left:10, paddingTop:20, flexDirection:'row'}}>
+          {/* <TouchableOpacity style={{position:'relative', left:10, paddingTop:20, flexDirection:'row'}}>
             <FontAwesome name="fax" size={25} color='#ff6200'/>
             <Text style={{textAlign:'left', left:5}}>+62 431 7282 788</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <TouchableOpacity style={{position:'relative', left:10, paddingTop:20, flexDirection:'row'}}>
             <MaterialCommunityIcons name="email" size={25} color='#ff6200'/>
-            <Text style={{textAlign:'left', left:5}}>reservation@bwthelagoon.com</Text>
+            <Text style={{textAlign:'left', left:5}}>{navigation.getParam('website')}</Text>
           </TouchableOpacity>
 
           <Text style={{padding:14, paddingTop:30,fontSize: 20, fontWeight:'bold', textAlign:'center'}}>Our Facility :</Text>
@@ -61,7 +81,8 @@ const informationScreen = ({navigation}) =>{
           </View>
           
           <Text style={{padding:14, paddingTop:30,fontSize: 20, fontWeight:'bold', textAlign:'center'}}>Share Us</Text>
-          <TouchableOpacity style={{left: 100, top: 10, flexDirection:'row'}}>
+          <TouchableOpacity onPress={()=> onShare(navigation.getParam('link_360'))}
+          style={{left: 100, top: 10, flexDirection:'row'}}>
             <Entypo name='facebook-with-circle' size={45} color='#3488D6'/>
           </TouchableOpacity>
 
@@ -105,16 +126,16 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#FFFFFF',
-      alignItems: 'center',
-      justifyContent: 'center'
+      // alignItems: 'center',
+      // justifyContent: 'center'
     },
     loginImage: {
       height:height*0.5,
-      width:430,
+      width:420,
     },
     aboutbtn: {
       position: 'absolute',
-      left:18,
+      left:15,
       top: 375,
       padding:16,
       borderRadius:30,

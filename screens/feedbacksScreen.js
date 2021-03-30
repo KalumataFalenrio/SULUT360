@@ -72,16 +72,16 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#FFFFFF',
-      alignItems: 'center',
-      justifyContent: 'center'
+      // alignItems: 'center',
+      // justifyContent: 'center'
     },
     loginImage: {
       height:height*0.5,
-      width:430,
+      width:420,
     },
     aboutbtn: {
       position: 'absolute',
-      left:18,
+      left:15,
       top: 375,
       padding:16,
       borderRadius:30,

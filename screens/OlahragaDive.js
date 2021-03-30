@@ -8,7 +8,7 @@ const {width,height} = Dimensions.get('window')
 
 
 
-class TampilanDarat extends Component {
+class OlahragaDive extends Component {
   constructor(props) {
     super(props);
     this.state = { isLoading: true };
@@ -35,15 +35,13 @@ class TampilanDarat extends Component {
 
   render() {
     const cekCategory =(item)=>{
-      if(item.category == "Rekreasi"){
+      if(item.category == "Dive"){
         return(
-          
-              <View style={styles.cardView}>
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
+          <View style={styles.cardView}>
                   <Text style={styles.sitename}>{item.site_name}</Text>
-                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('about')}>
                   <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
-                 
+                  </TouchableOpacity>
 
               <Button
                   buttonTitle="View 360"
@@ -53,7 +51,6 @@ class TampilanDarat extends Component {
                   onPress={()=>Linking.openURL(item.link_360)}
                 />
               </View>
-              
         )
       }
     }
@@ -149,7 +146,7 @@ const styles = StyleSheet.create({
 });
 
 
-export default TampilanDarat;
+export default OlahragaDive;
 
 
 // import React, { useEffect,useState } from "react";
