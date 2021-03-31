@@ -38,10 +38,10 @@ class TampilanUdara extends Component {
       if(item.category == "Aerial"){
         return(
           <View style={styles.cardView}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
                   <Text style={styles.sitename}>{item.site_name}</Text>
-                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('about')}>
-                  <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
                   </TouchableOpacity>
+                  <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
 
               <Button
                   buttonTitle="View 360"

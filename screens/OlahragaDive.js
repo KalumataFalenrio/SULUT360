@@ -38,10 +38,10 @@ class OlahragaDive extends Component {
       if(item.category == "Dive"){
         return(
           <View style={styles.cardView}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
                   <Text style={styles.sitename}>{item.site_name}</Text>
-                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('about')}>
-                  <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
                   </TouchableOpacity>
+                  <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
 
               <Button
                   buttonTitle="View 360"
@@ -116,6 +116,7 @@ const styles = StyleSheet.create({
       top:30,
       backgroundColor: 'grey',
       margin: width * 0.03,
+      height:height * 0.4,
       borderRadius: width * 0.05,
       shadowColor: '#000',
       shadowOffset: { width:0.5, height: 0.5 },

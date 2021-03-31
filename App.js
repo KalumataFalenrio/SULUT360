@@ -19,13 +19,13 @@ import LoginScreen from './screens/LoginScreen';
 import MainMenu from './screens/MainMenu';
 import LoadingScreen from './screens/LoadingScreen';
 import TempatWisata from './screens/TempatWisata';
-import informationScreen from './screens/informationScreen';
+// import informationScreen from './screens/informationScreen';
 import AboutScreen from './screens/AboutScreen';
-import feedbacksScreen from './screens/feedbacksScreen';
+// import feedbacksScreen from './screens/feedbacksScreen';
 import TampilanDarat from './screens/TampilanDarat';
 import TampilanUdara from './screens/TampilanUdara'
 import OlahragaDive from './screens/OlahragaDive';
-import Budaya from './screens/Budaya';
+// import Budaya from './screens/Budaya';
 
 
 
@@ -46,13 +46,13 @@ const AppSwitchNavigator = createSwitchNavigator({
   LoginScreen:LoginScreen,
   MainMenu:MainMenu,
   tempatwisata:TempatWisata,
-  information:informationScreen,
+  // information:informationScreen,
   about:AboutScreen,
-  feedbacks:feedbacksScreen,
+  // feedbacks:feedbacksScreen,
   tampilandarat:TampilanDarat,
   tampilanudara:TampilanUdara,
   olahragadive:OlahragaDive,
-  budaya:Budaya,
+  // budaya:Budaya,
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

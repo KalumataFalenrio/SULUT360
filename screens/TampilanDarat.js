@@ -117,13 +117,15 @@ const styles = StyleSheet.create({
     },
     cardView: {
       top:30,
-      backgroundColor: 'grey',
+      backgroundColor: "grey",
       margin: width * 0.03,
+      height:height * 0.4,
       borderRadius: width * 0.05,
       shadowColor: '#000',
       shadowOffset: { width:0.5, height: 0.5 },
       shadowOpacity: 0.5,
-      shadowRadius: 3
+      shadowRadius: 3,
+      
   },
   sitename:{
       top:-20,

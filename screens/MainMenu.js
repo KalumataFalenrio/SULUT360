@@ -23,9 +23,6 @@ const MainMenu = ({navigation}) =>{
       const goToolahragadive = () =>{
           navigation.navigate('olahragadive')
       }
-      const goTobudaya = () =>{
-        navigation.navigate('budaya')
-    }
     
         return (
             <View style={styles.container}>
@@ -75,17 +72,6 @@ const MainMenu = ({navigation}) =>{
                             />
                              <Text style={{top:-140, paddingLeft:12, fontWeight:'bold', color:'#1D9885'}}>Olahraga & dive </Text>
                         </TouchableOpacity>
-
-                        <TouchableOpacity onPress={goTobudaya}
-                        style={styles.Budaya}>
-                            <Image
-                                source={require('../assets/images/Budaya.png')}
-                                style={{top:-60, left:-55,resizeMode:'center'}}
-                            />
-                             <Text style={{top:-140, paddingLeft:37, fontWeight:'bold', color:'#583B13'}}>Budaya</Text>
-                        </TouchableOpacity>
-
-
                     
                     </View> 
                     <TouchableOpacity onPress={goTotempatwisata}
@@ -136,7 +122,7 @@ const styles = StyleSheet.create({
     },
     Dive:{
         top: -100,
-        left:55,
+        left:140,
         height: 170,
         width:130,
         borderRadius:30,
@@ -155,7 +141,7 @@ const styles = StyleSheet.create({
     tampilkanbtn: {
         
         left:125,
-        top: -240,
+        top: -70,
         padding:16,
         borderRadius:30,
         backgroundColor:'#ff6200',
