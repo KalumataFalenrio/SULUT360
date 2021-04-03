@@ -1,8 +1,7 @@
-import React, { Component, useState } from "react";
-import { View, Text, StyleSheet, 
-    Button, Image, ImageBackground, 
-    ScrollView, TouchableOpacity, FlatList, Dimensions, TextInput, ActivityIndicator } from 'react-native';
-import { Entypo, Feather } from '@expo/vector-icons';
+import React, { Component } from "react";
+import { View, Text, StyleSheet, Image, ImageBackground, 
+    ScrollView, TouchableOpacity, Dimensions,} from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 const height = Dimensions.get('window').height;
 
@@ -23,25 +22,24 @@ const MainMenu = ({navigation}) =>{
       const goToolahragadive = () =>{
           navigation.navigate('olahragadive')
       }
+    //   const goToBudaya = () =>{
+    //     navigation.navigate('Budaya')
+    // }
     
         return (
             <View style={styles.container}>
                 <ImageBackground
-            source={require('../assets/images/Kawanua360spot1.png')}
+            source={{uri:'https://mpdigital.id/wp-content/uploads/2020/08/bunakenAerial.jpg'}}
             style={styles.loginImage}>
-                    <TouchableOpacity onPress={goTomenu}
+                </ImageBackground>
+                    {/* <TouchableOpacity onPress={goTomenu}
                     style={{position: 'absolute', left:20, top:40,
                         backgroundColor:'#ff6200', padding:10, borderRadius:40, elevation: 5,}}>
                     <Entypo name="menu" size={25} color='#fff'/>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 <View> 
-                    {/* {this.state.search}
-                    <View style={{...StyleSheet.absoluteFill,
-                    alignItems:'center',justifyContent:'center'}}>
-                        <ActivityIndicator size="large" color="#ff6200"/>
-                    </View> */}
                 </View>
-                </ImageBackground>
+                
                 
                 <ScrollView style={styles.description}>
                    <View>
@@ -72,6 +70,15 @@ const MainMenu = ({navigation}) =>{
                             />
                              <Text style={{top:-140, paddingLeft:12, fontWeight:'bold', color:'#1D9885'}}>Olahraga & dive </Text>
                         </TouchableOpacity>
+
+                        {/* <TouchableOpacity onPress={goToBudaya}
+                        style={styles.Budaya}>
+                            <Image
+                                source={require('../assets/images/Budaya.png')}
+                                style={{top:-60, left:-55,resizeMode:'center'}}
+                            />
+                             <Text style={{top:-140, paddingLeft:12, fontWeight:'bold', color:'#1D9885'}}>Olahraga & dive </Text>
+                        </TouchableOpacity> */}
                     
                     </View> 
                     <TouchableOpacity onPress={goTotempatwisata}

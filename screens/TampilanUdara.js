@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
 import { FlatList, ActivityIndicator, Text, View,StyleSheet,
-    Dimensions, TouchableOpacity, TextInput, Image, Linking} from 'react-native';
+    Dimensions, TouchableOpacity, TextInput, Image} from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import Button from './Button';
 
 const {width,height} = Dimensions.get('window')
 
@@ -37,20 +36,14 @@ class TampilanUdara extends Component {
     const cekCategory =(item)=>{
       if(item.category == "Aerial"){
         return(
-          <View style={styles.cardView}>
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
+          
+              <View style={styles.cardView}>
                   <Text style={styles.sitename}>{item.site_name}</Text>
-                  </TouchableOpacity>
+                  <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
                   <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
-
-              <Button
-                  buttonTitle="View 360"
-                  btnType="360"
-                  color="#FFFFFF"
-                  backgroundColor="#ff6200"
-                  onPress={()=>Linking.openURL(item.link_360)}
-                />
+                  </TouchableOpacity>
               </View>
+              
         )
       }
     }
@@ -65,31 +58,12 @@ class TampilanUdara extends Component {
 
     return (
       <View style={styles.container}>
-          <TextInput
-            placeholder='search your destination'
-            placeholderTextColor='#585757'
-            style={{top:20,
-                left : 85,
-                marginTop: 16,
-                backgroundColor:'#000000',
-                paddingLeft: 24,
-                padding : 12,
-                borderTopLeftRadius : 30,
-                borderBottomLeftRadius : 30,
-                width: '80%',
-                elevation: 5,}}
-            />
-        
-            <Feather name='search' size={25} color='#585757'  style={
-                {position:'absolute', top:50, left:380, elevation:5,}}
-                />
         <FlatList 
           data={this.state.dataSource}
           renderItem={({ item }) => (
             cekCategory(item)
            )
           }
-          // keyExtractor={(item, category) => 'key' + category}
           keyExtractor={({id}) => id }
         />
         <TouchableOpacity onPress={()=>this.props.navigation.navigate('MainMenu')}
@@ -113,19 +87,22 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     cardView: {
-      top:30,
-      backgroundColor: 'grey',
-      margin: width * 0.03,
-      borderRadius: width * 0.05,
-      shadowColor: '#000',
-      shadowOffset: { width:0.5, height: 0.5 },
-      shadowOpacity: 0.5,
-      shadowRadius: 3
+      top:70,
+      marginTop:20,
+        backgroundColor: 'grey',
+        margin: width * 0.03,
+        borderRadius: width * 0.05,
+        shadowColor: '#000',
+        shadowOffset: { width:0.5, height: 0.5 },
+        shadowOpacity: 0.5,
+        shadowRadius: 3
+      
   },
   sitename:{
       top:-20,
       width:width,
       margin:width*0.1,
+      marginHorizontal: 10,
       color:'black',
       fontSize:20,
       fontWeight:'bold'
@@ -147,35 +124,3 @@ const styles = StyleSheet.create({
 
 
 export default TampilanUdara;
-
-
-// import React, { useEffect,useState } from "react";
-// import { 
-//     View,
-//     Text,
-//     StyleSheet,
-//     Button,
-//     TouchableOpacity,
-// } from "react-native";
-// import { Feather } from '@expo/vector-icons';
-
-// //IMPORT CARD DAN API
-// import DaratAPI from '../API/DaratAPI';
-
-// const TampilanDarat  =({navigation}) =>{
-//     const goToMainMenu = () =>{
-//         navigation.navigate('MainMenu');
-
-//     }
-//     return(
-//         <View>
-//             <TouchableOpacity onPress={goToMainMenu}
-//         style={{position: 'absolute', left:20, top:40,
-//           backgroundColor:'#ff6200', padding:10, borderRadius:40,}}>
-//         <Feather name="arrow-left" size={24} color='#fff'/>
-//         </TouchableOpacity>
-//         <DaratAPI></DaratAPI>
-//         </View>
-//     )
-// }
-// export default TampilanDarat;

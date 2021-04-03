@@ -25,7 +25,8 @@ import AboutScreen from './screens/AboutScreen';
 import TampilanDarat from './screens/TampilanDarat';
 import TampilanUdara from './screens/TampilanUdara'
 import OlahragaDive from './screens/OlahragaDive';
-// import Budaya from './screens/Budaya';
+import Comments from './card/Comments'
+import Budaya from './screens/Budaya';
 
 
 
@@ -52,7 +53,8 @@ const AppSwitchNavigator = createSwitchNavigator({
   tampilandarat:TampilanDarat,
   tampilanudara:TampilanUdara,
   olahragadive:OlahragaDive,
-  // budaya:Budaya,
+  Comments:Comments,
+  Budaya:Budaya,
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);
