@@ -80,9 +80,9 @@ const TempatWisata=({navigation})=>{
     //     )
     // }
     return(
-        <SafeAreaView style={{flex:1}}>
+        <SafeAreaView >
             <View style={styles.container}>
-                <TextInput
+                <TextInput style={{flex:1}}
                 style={styles.TextInputStyle}
                 value={search}
                 placeholder="search your destination here"
@@ -106,15 +106,30 @@ const TempatWisata=({navigation})=>{
 export default TempatWisata;
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor:'white'
+        // flex: 1,
+        backgroundColor:'#E8E8E8'
     },
     itemStyle:{
         padding:10
     },
+    TextInputStyle:{
+        top:30,
+        left : 85,
+        marginTop: 16,
+        backgroundColor:'white',
+        paddingLeft: 24,
+        padding : 12,
+        borderWidth: 1,
+        borderColor: 'black',
+        borderTopLeftRadius : 30,
+        borderBottomLeftRadius : 30,
+        width: '80%',
+        elevation: 1,
+    },
     cardView: {
+     
         marginTop:35,
-          backgroundColor: 'grey',
+          backgroundColor: 'white',
           margin: width * 0.03,
           borderRadius: width * 0.04,
           shadowRadius: 3
@@ -125,18 +140,7 @@ const styles = StyleSheet.create({
         marginLeft:20,
         marginRight:20,
     },
-    TextInputStyle:{
-        top:25,
-        left : 85,
-        marginTop: 16,
-        backgroundColor:'grey',
-        paddingLeft: 24,
-        padding : 12,
-        borderTopLeftRadius : 30,
-        borderBottomLeftRadius : 30,
-        width: '80%',
-        elevation: 5,
-    },
+   
     sitename:{
       top:-20,
       width:width,

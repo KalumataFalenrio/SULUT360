@@ -27,6 +27,7 @@ import TampilanUdara from './screens/TampilanUdara'
 import OlahragaDive from './screens/OlahragaDive';
 import Comments from './card/Comments'
 import Budaya from './screens/Budaya';
+// import InputData from './Component/InputData'
 
 
 
@@ -55,6 +56,7 @@ const AppSwitchNavigator = createSwitchNavigator({
   olahragadive:OlahragaDive,
   Comments:Comments,
   Budaya:Budaya,
+  // InputData:InputData
 });
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);

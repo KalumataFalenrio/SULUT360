@@ -79,7 +79,7 @@ class OlahragaDive extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#E8E8E8',
       },
     loading: {
         flex: 1,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     cardView: {
       marginTop:100,
-        backgroundColor: 'grey',
+        backgroundColor: 'white',
         margin: width * 0.03,
         borderRadius: width * 0.05,
         shadowColor: '#000',
