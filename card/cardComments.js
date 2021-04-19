@@ -17,11 +17,13 @@ export default CardComments;
 
 const styles = StyleSheet.create({
     cardComments:{
+        top:-50,
         flexDirection: 'row',
-        padding: 15,
+        padding: 20,
         backgroundColor:'white',
-        borderRadius: 5,
+        borderRadius: 10,
         marginBottom: 20,
+        marginHorizontal:30,
         shadowColor: '#000',
         shadowOffset:{
             width:0,
@@ -33,6 +35,6 @@ const styles = StyleSheet.create({
     },
     textComment:{
         fontWeight:'bold',
-        fontSize:16,
+        fontSize:14,
     }
 })

@@ -28,6 +28,9 @@ import OlahragaDive from './screens/OlahragaDive';
 import Comments from './card/Comments'
 import Budaya from './screens/Budaya';
 // import InputData from './Component/InputData'
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['Setting a timer']);
 
 
 

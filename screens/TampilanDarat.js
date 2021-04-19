@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { FlatList, ActivityIndicator, Text, View,StyleSheet,
     Dimensions, TouchableOpacity, TextInput, Image} from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { Feather,Entypo } from '@expo/vector-icons';
 
 const {width,height} = Dimensions.get('window')
 
@@ -42,6 +42,7 @@ class TampilanDarat extends Component {
                   <TouchableOpacity onPress={()=>this.props.navigation.navigate('about',item)}>
                   <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
                   </TouchableOpacity>
+      
               </View>
               
         )

@@ -21,7 +21,7 @@
     },
     "android": {
      
-      "package": "com.sulut360",
+      "package": "com.GoogleSignIn",
       
       "googleServicesFile": "./google-services.json"
     },

@@ -3,6 +3,7 @@ import { SafeAreaView ,View, Text, StyleSheet, ImageBackground,TouchableOpacity,
 import SocialButton from '../screens/SocialButton';
 import * as Facebook from "expo-facebook";
 import * as firebase from 'firebase';
+import * as Google from 'expo-google-app-auth';
 
 const height = Dimensions.get('window').height;
 
@@ -61,6 +62,24 @@ const LoginScreen = () =>{
           alert(`Facebook Login Error: ${message}`);
         }
       };
+
+      // signInWithGoogleAsync = async () => {
+      //   try {
+      //     const result = await Google.logInAsync({
+      //       androidClientId: '34603129118-3ls2i2ukgd6noui4ecjidckak6okc6cb.apps.googleusercontent.com',
+      //       // iosClientId: YOUR_CLIENT_ID_HERE,
+      //       scopes: ['profile', 'email'],
+      //     });
+      
+      //     if (result.type === 'success') {
+      //       return result.accessToken;
+      //     } else {
+      //       return { cancelled: true };
+      //     }
+      //   } catch (e) {
+      //     return { error: true };
+      //   }
+      // }
       
     return (
       <View style={styles.container}>
@@ -89,17 +108,13 @@ const LoginScreen = () =>{
             onPress={() =>this.signUpFacebook()}
           />}
 
-        <SocialButton
+        {/* <SocialButton
             buttonTitle="Sign In with Google"
             btnType="google"
             color="#FFFFFF"
             backgroundColor="#FF6838"
-          // onPress={() => this.signInWithGoogleAsync()}
-        /> 
-
-        {/* <TouchableOpacity onPress={goTomainmenu}>
-          <Text style={{top:30, left:170, fontWeight: 'bold', fontSize: 18}}>skip</Text>
-        </TouchableOpacity> */}
+          // onPress={() =>this.signInWithGoogleAsync()}
+        />  */}
           </View>
       </View>
     );
@@ -111,13 +126,6 @@ const styles = StyleSheet.create({
     flex: 1, 
     backgroundColor: '#F5F3F3'
   },
-  // header: {
-  //     flex: 2,
-  //     justifyContent: 'flex-end',
-  //     paddingHorizontal: 20,
-  //     paddingBottom: 20,
-  //     // backgroundColor: '#FF6200',
-  // },
   footer: {
       flex: 1,
       top: -20,

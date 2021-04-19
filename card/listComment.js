@@ -17,7 +17,7 @@ class ListComment extends Component {
     
         this.state = {
           commenting: {},
-          commentingKey: []
+          commentingKey: [],
         };
       }
 
@@ -47,10 +47,8 @@ class ListComment extends Component {
                         <CardComments key={key} commentItem={commenting[key]} id={key}/>
                     ))
                 ) : (
-                    <Text>no comments</Text>
+                    <Text></Text>
                 )}
-             {/* <Text style={{fontSize:17, paddingHorizontal: 14,}}>ini adalah contoh komen: tempat ini sangat bagus. dan airnya 
-             sangat bersih bahkan sampai berwarna biru</Text> */}
          </View>
         );
     }
@@ -58,15 +56,4 @@ class ListComment extends Component {
 export default ListComment;
 
 const styles = StyleSheet.create({
-    // cardView: {
-    //     top:-40,
-    //     backgroundColor: "white",
-    //     margin: width * 0.03,
-    //     borderRadius: width * 0.05,
-    //     shadowColor: '#000',
-    //     shadowOffset: { width:0.5, height: 0.5 },
-    //     shadowOpacity: 0.5,
-    //     shadowRadius: 3,
-    //     opacity:0.5
-    //   },
 });

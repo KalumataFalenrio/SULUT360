@@ -1,11 +1,12 @@
 import React, { Component, useState } from 'react';
 import { View, Text, StyleSheet, Image,
   ScrollView, TouchableOpacity, Dimensions, Share } from 'react-native';
-
+  import Ratings from '../API/Ratings';
 import { Feather, Entypo } from '@expo/vector-icons';
 import { WebView } from 'react-native-webview';
 import Comments from '../card/Comments';
-
+import ListComment from '../card/listComment';
+// import item from './TempatWisata';
 
 const {height} = Dimensions.get('window')
 
@@ -36,38 +37,37 @@ const AboutScreen = ({navigation}) =>{
           }
         };
     return (
-      <View style={styles.container}>   
-        <View style={{height:530,top:30}}>
+      <View style={styles.container}>
+        
+    
+     
+        <View style={{height:410,top:30}}>
           <WebView
             source={{ uri: navigation.getParam('link_360')}}
           />
-        </View>      
+        </View>  
+        <TouchableOpacity onPress={goToMainMenu}
+        style={{position: 'absolute', left:320, top:420,
+          backgroundColor:'#ff6200', padding:10, borderRadius:40, elevation:5, width:70}}>
+        <Feather name="arrow-left" size={24} color='#fff'/>
+        </TouchableOpacity>    
       <ScrollView style={styles.description}>
-        <Text style={{padding:14, paddingTop:10,fontSize: 20, fontWeight:'bold',}}>{navigation.getParam('site_name')}
-        <Entypo style={{left:10,top:-43}}
-          name="location-pin" size={35} color='#ff6200'/>
+        <Text style={{padding:14, paddingTop:10,fontSize: 26, fontWeight:'bold', left:-5}}>{navigation.getParam('site_name')}
+          <TouchableOpacity onPress={onShare}
+            style={{left: 220, top: -80}}>
+            <Entypo name='share' size={40} color='#ff6200'/>
+        </TouchableOpacity>
         </Text>
         
-        
-        <TouchableOpacity onPress={onShare}
-            style={{left: 340, top: -45}}>
-            <Entypo name='share' size={35} color='#ff6200'/>
-        </TouchableOpacity>
-
-          {/* <Text style={{top:-30,paddingHorizontal: 14, fontSize:17 ,fontWeight: 'normal', justifyContent:'flex-start'
-        ,textAlign:'justify' ,lineHeight:19 ,opacity:0.5}}>
-          {navigation.getParam('description')}
-          </Text> */}
           <View>
-            <Comments/>
+          <Ratings/>
+             <Comments/>
+            
+            {/* <ListComment/> */}
           </View>
       </ScrollView>
-
-        <TouchableOpacity onPress={goToMainMenu}
-        style={{position: 'absolute', left:5, top:90,
-          backgroundColor:'#ff6200', padding:10, borderRadius:40,}}>
-        <Feather name="arrow-left" size={24} color='#fff'/>
-        </TouchableOpacity>
+      
+        
       
       </View>
       );
@@ -79,6 +79,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#E8E8E8',
   },
+  rating:{
+    paddingTop:-40,
+    left:-135,
+},
   aboutbtn: {
     position: 'absolute',
     left:320,

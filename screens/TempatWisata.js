@@ -8,9 +8,11 @@ import {
     TouchableOpacity,
     Image,
     Dimensions,
-    TextInput
+    TextInput,
+    Button,
 } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import * as Linking from 'expo-linking';
+import { Feather,Entypo } from '@expo/vector-icons';
 const {width,height} = Dimensions.get('window')
 
 const TempatWisata=({navigation})=>{
@@ -58,17 +60,26 @@ const TempatWisata=({navigation})=>{
     const ItemView=({item})=>{
         return(
             <View style={styles.cardView}>
-                  <Text style={styles.sitename}>{item.site_name}</Text>
+                  <Text style={styles.sitename}>{item.site_name}
+                  <Entypo name="location-pin" size={35} color='#ff6200'
+              onPress={()=>Linking.openURL(item.address_google_maps)}
+              />
+                  </Text>
                   <TouchableOpacity onPress={()=>navigation.navigate('about',item)}>
                   <Image style={styles.image} source={item.thumbnail ? {uri: item.thumbnail } : null}/>
                   </TouchableOpacity>
-
+            {/* <View>
+              <Entypo name="location-pin" size={35} color='#ff6200'
+              onPress={()=>Linking.openURL(item.address_google_maps)}
+              />
+            </View> */}
+             
               {/* <Button
                   buttonTitle="View 360"
                   btnType="360"
                   color="#FFFFFF"
                   backgroundColor="#ff6200"
-                  onPress={()=>Linking.openURL(item.link_360)}
+                  onPress={() => Linking.openURL(item.address_google_maps)}
                 /> */}
               </View>
         )
@@ -145,9 +156,9 @@ const styles = StyleSheet.create({
       top:-20,
       width:width,
       margin:width*0.1,
-      marginHorizontal: 10,
+      marginHorizontal:10 ,
       color:'black',
-      fontSize:20,
+      fontSize:16,
       fontWeight:'bold'
     },
 });
