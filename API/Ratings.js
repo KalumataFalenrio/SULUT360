@@ -1,3 +1,96 @@
+import React, {useState} from 'react';
+import { SafeAreaView, StyleSheet, Text,TouchableOpacity, Image, View} from 'react-native'
+// import { View } from 'react-native-animatable';
+
+
+const Ratings =()=>{
+    const [defaultRating, setDefaultRating] = useState(2);
+    const [maxRating, setmaxRating] = useState([1,2,3,4,5])
+
+    const starImgFilled = 'https://raw.githubusercontent.com/tranhonghan/images/main/star_filled.png'
+    const starImgCorner = 'https://raw.githubusercontent.com/tranhonghan/images/main/star_corner.png'
+
+    const CustomRatingBar = () =>{
+        return(
+            <View style={styles.CustomRatingBarStyle}>
+                 {
+                     maxRating.map((item, key) =>{
+                         return(
+                             <TouchableOpacity
+                             activeOpacity={0.7}
+                             key={item}
+                             onPress={() => setDefaultRating(item)}
+                             >
+                            <Image
+                            style={styles.starImgStyle}
+                            source={
+                                item <= defaultRating
+                                ? {uri : starImgFilled}
+                                : {uri : starImgCorner}
+                            }
+                            />
+                             </TouchableOpacity>
+                         )
+                     })
+                 }
+            </View>
+        )
+    }
+    return(
+        <SafeAreaView style={styles.container}>
+    
+        <CustomRatingBar />
+        <Text style={styles.TextStyle}>
+        {defaultRating + '/' + maxRating.length}
+        </Text>
+        <TouchableOpacity
+        activeOpacity={0.7}
+        style={styles.btnStyle}
+        onPress={() => alert(defaultRating)}
+        >
+            <Text style={styles.textTombol}>SUBMIT</Text>
+        </TouchableOpacity>
+        </SafeAreaView>
+    );
+};
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+    },
+    TextStyle:{
+        textAlign:'center',
+        fontSize:16,
+        fontWeight:'bold',
+    },
+    CustomRatingBarStyle:{
+        justifyContent:'center',
+        flexDirection:'row',
+        marginTop:10
+    },
+    starImgStyle:{
+       
+        width:30,
+        height:30,
+        resizeMode:'cover'
+    },
+    btnStyle:{
+        backgroundColor: '#ff6200',
+        padding: 10,
+        borderRadius: 5,
+        marginTop: 10,
+        marginHorizontal:150,
+        borderRadius:10,
+    },
+    textTombol: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontSize: 12,
+      },
+});
+export default Ratings;
+
 // import React, { useState } from "react";
 // import { 
 //   View,
@@ -53,19 +146,19 @@
 //           )
 //         })}
 //       </View>
-//       {/* <textarTeea
+//       <textarTeea
 //         placeholder="What's your experience?"
 //         style={styles.textarea}
-//       /> */}
+//       /> 
 
-//       {/* <button
+//       <button
 //         style={styles.button}
 //       >
 //         <Text>
 //         Submit
 //         </Text>
         
-//       </button> */}
+//       </button> 
       
 //     </View>
 //   );
